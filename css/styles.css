@@ -339,7 +339,7 @@ main {
   .jumptarget::before {
     height: 290px;
     margin: 0 26px;
-    margin-top: -31px;
+    margin-top: 4px;
     margin-bottom: -70px;
     background-image: url(../img/divider.png);
     background-repeat: round no-repeat;
