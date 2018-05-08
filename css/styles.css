@@ -1,0 +1,412 @@
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+main {
+  width: 100%;
+  background-color: #1B1B1B;
+  color: #1B1B1B;
+  font-family: 'Raleway', sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 13%;
+}
+ a {
+   color: #1B1B1B;
+   text-decoration: none;
+ }
+
+ p {
+   color: #fff;
+ }
+
+/* header */
+.main-header {
+  position: fixed;
+  width: 100%;
+  background-color: #1B1B1B;
+  height: 17%;
+  border-bottom: 2px double #D4AF37;
+  top: 0;
+}
+
+/* header-title */
+.main-title{
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  font-weight: 200;
+  font-size: 3em;
+  text-align: center;
+  width: 100%;
+  margin: 5px 0;
+  padding: 7px 0;
+}
+
+/* menu to show nav-item */
+.menu {
+  width: 100%;
+  cursor: pointer;
+  position: fixed;
+  top: 5%;
+  left: 3%;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* navigation */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  top: 15%;
+}
+
+.main-nav .nav-item {
+  display: none;
+  border-radius: 5px;
+  background-color: #D4AF37;
+  width: 80%;
+  text-align: center;
+  margin: 5px 0;
+  align-self: flex-start;
+  transition: all .3s;
+}
+
+.nav-item a {
+  display: block;
+  padding: 10px;
+}
+.main-nav .nav-item:nth-child(odd) {
+  align-self: flex-end;
+}
+
+.main-nav .nav-item:hover {
+  background-color: #1B1B1B;
+}
+.main-nav .nav-item:hover a {
+  color: #CBA135;
+}
+
+/* box --> contain contents */
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* box title */
+.box-title {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #CFB53B;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* box content */
+.box-content {
+  padding: 10px;
+  border: 2px solid #CBA135;
+  border-radius: 10px;
+}
+
+/* help jump page to anchor */
+.jumptarget::before {
+  content:"";
+  display:block;
+  height: 130px;
+}
+
+/* insert spave after last box */
+.aftertarget::after {
+  content: "";
+  display: block;
+  height: 170px;
+}
+
+/* project-list contains the projects */
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  width: 100%;
+  margin: 10px 5px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid #CBA135;
+  border-radius: 10px;
+  transition: all .5s;
+}
+
+.project-basics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1B1B1B;
+}
+
+.project-image {
+  width: 120px;
+  height: 120px;
+  margin: 20px;
+  box-shadow: 0 8px 6px -6px black;
+  transition: all .3s;
+}
+
+.project-name {
+  padding: 10px;
+  background-color: #CBA135;
+  border-radius: 10px;
+  transition: all .3s;
+}
+
+/* dont display detailed information */
+.project .project-more-details {
+  display: none;
+}
+
+.project:hover {
+  background-color: #CBA135;
+  cursor: pointer;
+}
+.project:hover .project-image {
+  width: 140px;
+  height: 140px;
+}
+.project:hover .project-name {
+  background-color: #1B1B1B;
+  color: #CBA135;
+}
+
+/* contains more information about project*/
+.detail-project {
+  width: 100%;
+  position: fixed;
+  background-color: #1B1B1B;
+  height: 76%;
+  top: 17%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.detail-project .project-more-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f7b72e;
+  padding: 10px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.detail-project .project-basics {
+  height: 55%;
+  justify-content: center;
+}
+
+.project-description,
+.project-skills,
+.project-link {
+  margin: 5px;
+}
+
+/* add descriptions before information */
+.project-description::before {
+  content: "Description: ";
+  font-weight: 700;
+}
+
+.project-skills::before {
+  content: "Skills used: ";
+  font-weight: 700;
+}
+
+.project-link {
+  color: #996902;
+  transition: all .3s;
+  text-decoration: underline;
+}
+.project-link:hover {
+  color: #534119;
+  text-decoration: none;
+}
+
+/* close detail-project */
+.close{
+  position: absolute;
+  right: 2%;
+  top: -2%;
+  font-size: 3em;
+  cursor: pointer;
+  z-index: 80;
+  color: #996902;
+
+}
+
+/* contacts */
+.soc-med {
+  display: flex;
+  justify-content: center;
+  background-color: #D4AF37;
+  border-radius: 10px;
+}
+
+.soc-med-icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+.soc-med-link {
+  transition: all .3s;
+}
+
+.soc-med-link:hover {
+  background-color: #FFD242;
+}
+
+/* footer */
+.main-footer {
+  width: 100%;
+  height: 7%;
+  bottom: 0;
+  position: fixed;
+  background-color: #1B1B1B;
+  border-top: 2px double #D4AF37;
+}
+
+.main-footer .copyright {
+  text-align: center;
+  font-size: 0.8em;
+  color: white;
+}
+
+/* media queries */
+
+/* min-width = 768px */
+@media (min-width: 768px) {
+  .main-header {
+    max-height: 30%;
+  }
+  .main-nav {
+    height: 45%;
+    top: 8%
+  }
+  .main-nav .nav-item {
+    width: 20%;
+    margin: 20px;
+  }
+  .box-content {
+    padding : 5%;
+  }
+  .jumptarget::before {
+    height: 290px;
+    margin: 0 26px;
+    margin-top: -31px;
+    margin-bottom: -70px;
+    background-image: url(../img/divider.png);
+    background-repeat: round no-repeat;
+  }
+  .aftertarget::after {
+    height: 16px;
+  }
+  .project {
+    width: 45%;
+  }
+  .detail-project {
+    top: 31%;
+    height: 62%;
+  }
+  .detail-project .project-basics {
+    width: 50%;
+    margin: 0 auto;
+    height: 60%;
+  }
+  .detail-project .project-more-details {
+    width: 50%;
+    margin: 10px auto;
+  }
+  .close {
+    right: 25%;
+    top: 0%;
+  }
+}
+
+/* min-width = 1024px */
+@media (min-width: 1024px) {
+  main {
+    width: 60%;
+  }
+  .main-header {
+    max-height: 25%;
+  }
+  .main-title {
+    font-size: 2.3em;
+  }
+  .main-nav {
+    height: 40%;
+  }
+  .jumptarget::before {
+      height: 225px;
+      margin-top: -33px;
+      margin-bottom: -33px;
+  }
+  .aftertarget::after {
+    height: 110px;
+  }
+  .project {
+    width: 25%;
+    flex-direction: column;
+  }
+  .detail-project {
+     top: 25%;
+     height: 68%;
+  }
+  .detail-project .project-more-details {
+    margin-bottom: 60px;
+  }
+  .detail-project .project-image {
+    width: 200px;
+    height: 200px;
+  }
+  .close {
+    top: 3%;
+  }
+}

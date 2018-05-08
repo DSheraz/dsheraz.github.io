@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSheraz</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway" rel="stylesheet">
+  </head>
+  <body>
+    <header class="main-header">
+      <h1 class="main-title">DSheraz</h1>
+      <nav class="main-nav">
+        <div class="menu" onclick="toggleMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <div class="nav-item" onclick="closeNav()">
+          <a href="#bio">Bio</a>
+        </div>
+        <div class="nav-item" onclick="closeNav()">
+          <a href="#projects">Projects</a>
+        </div>
+        <div class="nav-item" onclick="closeNav()">
+          <a href="#contacts">Contacts</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="box jumptarget" id="bio">
+        <h2 class="box-title">Biography</h2>
+        <div class="box-content">
+          <p>Hi! For the past three months, I took the Front-end Development Techdegree at Treehouse. This website is to show all of my projects that I have done as part of the Techdegree.</p>
+          <p>When I'm not in front of my computer, I really like to read books. I can't live without my daily dose of music and politics but I tend to overdose. A total freedom lover.</p>
+        </div>
+      </div>
+
+      <div class="box jumptarget" id="projects">
+        <h2 class="box-title">Projects</h2>
+        <div class="projects-list">
+        </div>
+      </div>
+
+      <div class="box jumptarget aftertarget" id="contacts">
+        <h2 class="box-title">Contacts</h2>
+        <div class="box-content">
+          <p>Please feel free to contact me on my social media. I'm available (almost) all the time. </p>
+          <div class="soc-med">
+            <a class="soc-med-link" href="mailto:dsheraz@gmail.com">
+              <img class="soc-med-icon" src="img/envelope.svg" title="Email" alt="Email">
+            </a>
+            <a class="soc-med-link" href="https://twitter.com/dshahiraz" target="_blank">
+              <img class="soc-med-icon" src="img/twitter.svg" title="Twitter" alt="Twitter">
+            </a>
+            <a class="soc-med-link" href="https://plus.google.com/+DShahiraZulkiflee" target="_blank">
+              <img class="soc-med-icon" src="img/google+.svg" title="Google+" alt="Google+">
+            </a>
+            <a class="soc-med-link" href="https://www.linkedin.com/in/dsheraz/" target="_blank">
+              <img class="soc-med-icon" src="img/linked-in.svg" title="Linkedin" alt="Linkedin">
+            </a>
+            <a class="soc-med-link" href="https://www.instagram.com/dshahiraz/" target="_blank">
+              <img class="soc-med-icon" src="img/instagram.svg" title="Instagram" alt="Instagram">
+            </a>
+          </div>
+      </div>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <p class="copyright">Copyright 2015, DSheraZ</p>
+    </footer>
+  <!-- script -->
+
+  <script src="js/script.js"></script>
+  </body>
+
+</html>
