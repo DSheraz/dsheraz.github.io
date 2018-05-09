@@ -142,7 +142,7 @@ main {
 .jumptarget::before {
   content:"";
   display:block;
-  height: 130px;
+  height: 80px;
 }
 
 /* insert spave after last box */
