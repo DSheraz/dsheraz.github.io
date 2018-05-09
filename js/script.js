@@ -202,16 +202,19 @@ projectsList.addEventListener('click', function(e) {
     detailProject.appendChild(close);
     //append detailProject to main
     main.appendChild(detailProject);
+  }
+});
 
-    //addEventListener to detailProject
-    body.addEventListener('click',function(e) {
-      //if target = close, remove detailProject from main
-      if(e.target.className === "close") {
-        checkQuery(query768);
-        main.removeChild(detailProject);
-      } else if(e.target.parentElement.className === "nav-item") {
-        main.removeChild(detailProject);
-      }
-    });
+//addEventListener to detailProject
+body.addEventListener('click',function(e) {
+  var close = document.querySelector('.close');
+  var detailProject = document.querySelector('.detail-project');
+  //if target = close, remove detailProject from main
+  if(e.target.className === "close") {
+    checkQuery(query768);
+    main.removeChild(detailProject);
+  } else if(e.target.parentElement.className === "nav-item" &&
+            detailProject !== null) {
+    main.removeChild(detailProject);
   }
 });
