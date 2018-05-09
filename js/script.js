@@ -178,6 +178,7 @@ projectData();
 projectsList.addEventListener('click', function(e) {
   //if the project is clicked(other than projectList)
   if (e.target.className !== "projects-list") {
+    menu.style.display = "none";
     //create span for close --> to close detail-project
     var close = document.createElement('span');
     close.className = "close";
@@ -206,6 +207,7 @@ projectsList.addEventListener('click', function(e) {
     body.addEventListener('click',function(e) {
       //if target = close, remove detailProject from main
       if(e.target.className === "close") {
+        menu.style.display = "block";
         main.removeChild(detailProject);
       } else if(e.target.parentElement.className === "nav-item") {
         main.removeChild(detailProject);
