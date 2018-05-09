@@ -3,6 +3,7 @@
 //===========================
 
 //variables
+var body = document.querySelector('body');
 var navItem = document.querySelectorAll('.nav-item');
 var menu = document.querySelector('.menu');
 var box = document.querySelector('.box');
@@ -177,35 +178,38 @@ projectData();
 projectsList.addEventListener('click', function(e) {
   //if the project is clicked(other than projectList)
   if (e.target.className !== "projects-list") {
-    //create div for the detail-project
-    var detailProject = document.createElement('div');
-    detailProject.className = "detail-project";
     //create span for close --> to close detail-project
     var close = document.createElement('span');
     close.className = "close";
     close.innerHTML = "&#215;";
-  }
-  //insert e.target.innerHTML to detailProject
-  if (e.target.className === "project") {
-    detailProject.innerHTML = e.target.innerHTML;
-  } else if (e.target.className === "project-basics") {
-    detailProject.innerHTML = e.target.parentElement.innerHTML;
-  } else if (e.target.className === "project-image" ||
-            e.target.className === "project-name") {
-    detailProject.innerHTML = e.target.parentElement.parentElement.innerHTML;
-  }
 
-  //append close to detailProject
-  detailProject.appendChild(close);
-  //append detailProject to main
-  main.appendChild(detailProject);
+    //create div for the detail-project
+    var detailProject = document.createElement('div');
+    detailProject.className = "detail-project";
 
-  //addEventListener to detailProject
-  detailProject.addEventListener('click',function(e) {
-    //if target = close, remove detailProject from main
-    if(e.target.className === "close") {
-      main.removeChild(detailProject);
+    //insert e.target.innerHTML to detailProject
+    if (e.target.className === "project") {
+      detailProject.innerHTML = e.target.innerHTML;
+    } else if (e.target.className === "project-basics") {
+      detailProject.innerHTML = e.target.parentElement.innerHTML;
+    } else if (e.target.className === "project-image" ||
+              e.target.className === "project-name") {
+      detailProject.innerHTML = e.target.parentElement.parentElement.innerHTML;
     }
-  });
 
+    //append close to detailProject
+    detailProject.appendChild(close);
+    //append detailProject to main
+    main.appendChild(detailProject);
+
+    //addEventListener to detailProject
+    body.addEventListener('click',function(e) {
+      //if target = close, remove detailProject from main
+      if(e.target.className === "close") {
+        main.removeChild(detailProject);
+      } else if(e.target.parentElement.className === "nav-item") {
+        main.removeChild(detailProject);
+      }
+    });
+  }
 });
