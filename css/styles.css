@@ -337,7 +337,7 @@ main {
     padding : 5%;
   }
   .jumptarget::before {
-    height: 290px;
+    height: 233px;
     margin: 0 26px;
     margin-top: 4px;
     margin-bottom: -70px;
