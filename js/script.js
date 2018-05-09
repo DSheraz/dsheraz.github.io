@@ -207,7 +207,7 @@ projectsList.addEventListener('click', function(e) {
     body.addEventListener('click',function(e) {
       //if target = close, remove detailProject from main
       if(e.target.className === "close") {
-        menu.style.display = "block";
+        checkQuery(query768);
         main.removeChild(detailProject);
       } else if(e.target.parentElement.className === "nav-item") {
         main.removeChild(detailProject);
